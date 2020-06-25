@@ -1,59 +1,63 @@
-const express = require('express');
-const app = express();         
-const bodyParser = require('body-parser');
-const port = 3000; //porta padrão
-
-
+const express = require('express')
+const app = express()
+const port = 3000
 const mysql = require('mysql');
 
 
-function execSQLQuery(sqlQry, res){
-    const connection = mysql.createConnection({
-      host     : 'localhost',
-      port     : 5432,
-      user     : 'root',
-      password : '12345678',
-      database : 'cotacao'
-      
-    });
-  
-    connection.query(sqlQry, function(error, results, fields){
-        if(error) 
-          res.json(error);
-        else
-          res.json(result);
-        connection.end();
-        console.log('executou!');
-    });
+
+var connection = mysql.createConnection({
+    host:"localhost",
+    user:"root",
+    password:'12345678',
+    database: "cotacao"
+});
+
+
+
+connection.connect();
+const dados = {nome:"Rafael", idade:35}
+const dados1 = {nome:"Suzano", idade:35}
+
+app.get('/', (req, res) => res.send('Hello World!'))
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+
+app.get('/api/v1', (req, res) => {
+    res.json(
+        { dados}
+    )
   }
+     )
 
 
-
-  
-
-//configurando o body parser para pegar POSTS mais tarde
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-
-//definindo as rotas
-
-
-//inicia o servidor
-app.listen(port);
-console.log('API funcionando!');
+app.get('/api/v2', (req, res) => {
+res.json(
+{ dados1}
+        )
+      }
+         )     
 
 
 
 
+app.get('/api/v3', (req, res) => {
+res.json(
+{ dados1}
+        )
+      }
 
-const router = express.Router();
-router.get('/', (req, res) => res.json({ message: 'Funcionando!' }));
-app.use('/', router);
+      )     
 
+app.get('/api/cotacao', (req, res) => {
+    connection.query(' select * from cotacao_full_dolar', function(err, rows, fields) {
+        if (err) throw err;
+        res.json({cotacao:rows});
 
+      });
+      
+      
 
-router.get('/cotacao', (req, res) =>{
-    execSQLQuery('select  * from cotacao_last7days_dolar ', res);
-})
-
+}
+                 ) ;        
+            
