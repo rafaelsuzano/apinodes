@@ -40,7 +40,7 @@ const dados1 = {nome:"Suzano", idade:35}
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(3000, () => console.log(`Example app listening on port ${port}!`))
 
 
 app.get('/api/v1', (req, res) => {
