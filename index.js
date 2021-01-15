@@ -2,11 +2,11 @@ var http = require('http');
 
 
 const hostname = '142.47.102.214';
-const port = 3000;
+
 
 var config = {
     hostname: hostname,
-    port: port,
+    port: 3000,
     method: 'post',
     path: '/produtos',
     headers: {
