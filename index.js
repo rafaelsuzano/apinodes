@@ -1,11 +1,14 @@
-var http = require('http');
+const http = require('http');
 
-var config = {
-    hostname: 'localhost',
-    port: 3000,
-    method: 'post',
-    path: '/produtos',
-    headers: {
-        'accept': 'application/json'
-    }
-};
+const hostname = 'http://142.47.102.214/';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
