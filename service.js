@@ -4,7 +4,7 @@ var Service = require('node-windows').Service;
 var svc = new Service({
   name:'Cotacao de Moedas',
   description: 'Apenas uma descrição',
-  script: 'C:\\nodemysql\\apinodes'
+  script: 'C:\\nodemysql\\daemon'
 });
  
 // Listen for the "install" event, which indicates the
