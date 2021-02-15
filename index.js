@@ -26,9 +26,9 @@ const mysql = require('mysql');
 
 
 var connection = mysql.createConnection({
-    host:"prd-cotacao.mysql.uhserver.com",
-    user:"rsc1985",
-    password:'Suz@no3001',
+    host:"142.47.217.91,
+    user:"prd-cotacao",
+    password:'12345678',
     database: "prd-cotacao"
 });
 
