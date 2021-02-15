@@ -5,7 +5,7 @@ var http = require('http');
 
 
 var config = {
-    hostname: '142.47.102.214:3385',
+    hostname: 'localhost',
     port: 3000,
     method: 'post',
     path: '/produtos',
@@ -26,12 +26,13 @@ const mysql = require('mysql');
 
 
 var connection = mysql.createConnection({
-    host:"142.47.217.91",
-    user:"prd-cotacao",
+    host:"localhost",
+	port:"3385",
+    user:"root",
     password:'12345678',
-    database: "prd-cotacao"
+    database: "prd_cotacao"
+	
 });
-
 
 
 connection.connect();
