@@ -5,7 +5,7 @@ var http = require('http');
 
 
 var config = {
-    hostname: '142.47.102.214',
+    hostname: '142.47.102.214:3385',
     port: 3000,
     method: 'post',
     path: '/produtos',
