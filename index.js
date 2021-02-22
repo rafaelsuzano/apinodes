@@ -1,9 +1,4 @@
 var http = require('http');
-
-
-
-
-
 var config = {
     hostname: 'localhost',
     port: 3000,
