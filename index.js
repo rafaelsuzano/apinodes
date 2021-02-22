@@ -25,14 +25,14 @@ const mysql = require('mysql');
 
 
 
-var connection = mysql.createConnection({
-    host:"142.47.217.91",
-	port:"3385",
-    user:"prd_cotacao",
-    password:'12345678',
-    database: "prd_cotacao"
+//var connection = mysql.createConnection({
+  //  host:"142.47.217.91",
+///	port:"3385",
+  //  user:"prd_cotacao",
+  //  password:'12345678',
+  //  database: "prd_cotacao"
 	
-});
+//});
 
 
 connection.connect();
